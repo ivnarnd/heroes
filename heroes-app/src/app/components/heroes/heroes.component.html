@@ -1,8 +1,8 @@
 <h1>Heroes <small>Marvel y DC</small></h1>
 <hr>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col" *ngFor="let heroe of heroes">
+<div class="row row-cols-1 row-cols-md-3 g-4 animated fadeIn fast">
+  <div class="col" *ngFor="let heroe of heroes; let i=index; ">
     <div class="card h-100">
       <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
       <div class="card-body">
@@ -12,7 +12,7 @@
       <div class="card-footer">
         <small class="text-muted bg-light">{{heroe.aparicion}}</small>
       </div>
-      <button type="button" class="btn btn-outline-primary btn-block m-3">Ver Mas...</button>
+      <button type="button" class="btn btn-outline-primary btn-block m-3" (click)="verHeroe(i)" >Ver Mas...</button>
     </div>
   </div>
 
