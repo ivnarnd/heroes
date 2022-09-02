@@ -53,16 +53,32 @@ export class HeroesService {
       casa: "Marvel"
     }
   ];
+
+
+  constructor() {
+    console.log('Servicio listo para usarse');
+
+  }
   getHeroes(){
     return this.heroes;
   }
   getHeroe(ind:number){
     return this.heroes[ind];
   }
-  constructor() {
-    console.log('Servicio listo para usarse');
+  buscarHeroes(termino:string):Heroe[]{
+    let heroesArr:Heroe[]=[];
+    termino=termino.toLowerCase();//coloco el termino en minuscula
+    for (const heroe of this.heroes) {
+      let nombre=heroe.nombre.toLowerCase();
+      if(nombre.indexOf(termino)>=0){
+        heroesArr.push(heroe);
+      }
 
+
+    }
+    return heroesArr;
   }
+
 
 }
 export interface Heroe{
