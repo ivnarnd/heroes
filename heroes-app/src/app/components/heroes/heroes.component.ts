@@ -17,10 +17,10 @@ export class HeroesComponent implements OnInit {
       this.heroes = this._heroesService.getHeroes();
   }
 
-  verHeroe(ind:number){
+   verHeroe(ind:number){
       //esta funcion recibe un index de un heroe y despliega la vista
       this.router.navigate(['/heroe',ind]);//redireccionamiento
 
-  }
+   }
 
 }

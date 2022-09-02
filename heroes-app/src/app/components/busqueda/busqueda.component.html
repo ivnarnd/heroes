@@ -9,18 +9,7 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4 animated fadeIn fast">
-  <div class="col" *ngFor="let heroe of heroes; let i=index; ">
-    <div class="card h-100">
-      <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
-      <div class="card-body">
-        <h5 class="card-title">{{heroe.nombre}}</h5>
-        <p class="card-text">{{heroe.bio}}</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted bg-light">{{heroe.aparicion}}</small>
-      </div>
-      <button type="button" class="btn btn-outline-primary btn-block m-3" (click)="verHeroe(i)" >Ver Mas...</button>
-    </div>
-  </div>
+
+  <app-heroe-tarjeta [heroe]="heroe" [ind]="heroe.ind"*ngFor="let heroe of heroes"></app-heroe-tarjeta>
 
 </div>
